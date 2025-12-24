@@ -1,8 +1,54 @@
 // Automatically updates year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// particles.js configuration for animated background
+// Wait for DOM to load before setting up event listeners
 document.addEventListener("DOMContentLoaded", function () {
+  // Projects modal functionality
+  const projectsBtn = document.getElementById("projectsBtn");
+  const projectsOverlay = document.getElementById("projectsOverlay");
+  const closeProjects = document.getElementById("closeProjects");
+
+
+  function openProjects() {
+    projectsOverlay.classList.add("active");
+    projectsOverlay.classList.remove("closing");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProjectsModal() {
+    projectsOverlay.classList.add("closing");
+    projectsOverlay.classList.remove("active");
+
+    setTimeout(() => {
+      projectsOverlay.classList.remove("closing");
+      document.body.style.overflow = "";
+    }, 600);
+  }
+
+  if (projectsBtn) {
+    projectsBtn.addEventListener("click", openProjects);
+  }
+  
+  if (closeProjects) {
+    closeProjects.addEventListener("click", closeProjectsModal);
+  }
+
+  // Close modal when clicking outside the content
+  projectsOverlay.addEventListener("click", (e) => {
+    // Close if clicking on the overlay background (not the modal content)
+    if (e.target === projectsOverlay || e.target.classList.contains("projects-book") ) {
+      closeProjectsModal();
+    }
+  });
+
+  // Close modal on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && projectsOverlay.classList.contains("active")) {
+      closeProjectsModal();
+    }
+  });
+
+  // particles.js configuration for animated background
   particlesJS("particles-js", {
     particles: {
       number: {

@@ -29,8 +29,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/styles/style.css" />
   </head>
-  <body class="min-h-screen flex flex-col relative overflow-hidden">
-    <main class="flex-1 grid place-items-center pt-8 z-10">
+  <body class="flex flex-col relative overflow-x-hidden">
+    <main
+      id="home"
+      class="flex-1 flex flex-col justify-center relative z-10"
+    >
       <section class="text-center space-y-6 hovered-element">
         <!-- profile picture -->
         <div
@@ -124,12 +127,7 @@
               ></path>
             </svg>
           </a>
-          <a
-            class="linkish"
-            href="#moreInfo"
-            target="_self"
-            aria-label="More Info"
-          >
+          <button class="linkish" id="projectsBtn" aria-label="Projects">
             <svg
               class="icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +138,7 @@
                 d="M4 8c0 1.104-0.896 2-2 2s-2-0.896-2-2 0.896-2 2-2 2 0.896 2 2zM8.5 6c-1.104 0-2 0.896-2 2s0.896 2 2 2 2-0.896 2-2-0.896-2-2-2zM15 6c-1.104 0-2 0.896-2 2s0.896 2 2 2 2-0.896 2-2-0.896-2-2-2z"
               ></path>
             </svg>
-          </a>
+          </button>
         </nav>
       </section>
     </main>
@@ -184,7 +182,6 @@
               </g>
             </svg>
           </span>
-          <span></span>
         </span>
         <a
           class="underline underline-offset-4 decoration-1 linkish"
@@ -194,9 +191,80 @@
         >
       </p>
       <p class="mono text-xs text-[var(--ink-dim)] mt-3" id="linz-time">
-        Built by Mahesh — <span id="year"></span>
+        Built by Mahesh × AI — <span id="year"></span>
       </p>
     </footer>
+
+    <!-- Projects Modal Overlay -->
+    <div
+      id="projectsOverlay"
+      class="projects-overlay fixed inset-0 z-50 opacity-0 pointer-events-none"
+    >
+      <!-- Close button -->
+      <button
+        id="closeProjects"
+        class="linkish absolute top-8 right-8 text-[var(--ink)] opacity-60 hover:opacity-100 transition-opacity"
+      >
+        <svg
+          class="icon w-8 h-8"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+        </svg>
+      </button>
+
+      <!-- Book Container -->
+      <div
+        class="projects-book fixed inset-0 flex items-center justify-center p-4"
+      >
+        <div
+          class="projects-content bg-[var(--bg)] w-full max-w-4xl max-h-[90vh] rounded-xl border border-[var(--ink)] border-opacity-30 overflow-y-auto"
+        >
+          <div class="p-8 md:p-12">
+            <h2
+              class="mono text-[clamp(28px,5vw,40px)] font-medium tracking-tight mb-12 text-center"
+            >
+              <span class="opacity-95">projects</span>
+            </h2>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Project Card Template - Add your projects here -->
+              <div
+                class="project-card p-6 rounded-lg border border-[var(--ink)] border-opacity-30 hover:border-opacity-60 transition-all duration-300"
+              >
+                <h3 class="mono text-lg font-medium mb-2">Project Name</h3>
+                <p class="text-sm opacity-80 mb-4">
+                  Project description goes here
+                </p>
+                <div class="flex gap-2">
+                  <a href="#" class="linkish text-xs mono">Code</a>
+                  <a href="#" class="linkish text-xs mono">Live</a>
+                </div>
+              </div>
+
+              <div
+                class="project-card p-6 rounded-lg border border-[var(--ink)] border-opacity-30 hover:border-opacity-60 transition-all duration-300"
+              >
+                <h3 class="mono text-lg font-medium mb-2">Project Name</h3>
+                <p class="text-sm opacity-80 mb-4">
+                  Project description goes here
+                </p>
+                <div class="flex gap-2">
+                  <a href="#" class="linkish text-xs mono">Code</a>
+                  <a href="#" class="linkish text-xs mono">Live</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="assets/scripts/script.js"></script>
   </body>
