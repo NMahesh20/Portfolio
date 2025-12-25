@@ -144,3 +144,34 @@ document.addEventListener("DOMContentLoaded", function () {
     retina_detect: true,
   });
 });
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Get typing effect in title
+async function typewriteTitle(str) {
+  document.title = "_";
+  while (true) {
+    // Type out the string
+    for (let i = 0; i < str.length; i++) {
+      document.title = str.substring(0, i + 1)+"_";
+      await sleep(120);
+    }
+    
+    // Pause at the end
+    await sleep(1000);
+    
+    // Delete the string character by character
+    for (let i = str.length; i > 1; i--) {
+      document.title = str.substring(0, i - 1);
+      await sleep(50);
+    }
+    document.title = "_";
+    
+    // Pause before restarting
+    await sleep(500);
+  }
+}
+let docTitle = "Mahesh's Portfolio";
+typewriteTitle(docTitle);
