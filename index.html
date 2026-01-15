@@ -199,23 +199,7 @@
     <div
       id="projectsOverlay"
       class="projects-overlay fixed inset-0 z-50 opacity-0 pointer-events-none"
-    >
-      <!-- Close button -->
-      <button
-        id="closeProjects"
-        class="linkish absolute top-8 right-8 text-[var(--ink)] opacity-60 hover:opacity-100 transition-opacity"
-      >
-        <svg
-          class="icon w-8 h-8"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-        >
-          <path
-            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-          />
-        </svg>
-      </button>
+    >      
 
       <!-- Book Container -->
       <div
@@ -224,7 +208,27 @@
         <div
           class="projects-content bg-[var(--bg)] w-full max-w-4xl max-h-[90vh] rounded-xl border border-[var(--ink)] border-opacity-30 overflow-y-auto"
         >
-          <div class="p-8 md:p-12">
+        <!-- close btn -->
+        <div class="p-4 mb-0 flex justify-end">
+            <button
+              id="closeProjects"
+              class="linkish mono text-sm flex items-center gap-2"
+            >
+              <svg
+                class="icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636a1 1 0 1 0-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"
+                />
+              </svg>
+              <span>Close</span>
+            </button>
+
+        </div>
+          <div class="p-8 md:p-12 mt-[-4em]">
             <h2
               class="mono text-[clamp(28px,5vw,40px)] font-medium tracking-tight mb-12 text-center"
             >
