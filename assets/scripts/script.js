@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const projectsOverlay = document.getElementById("projectsOverlay");
   const closeProjects = document.getElementById("closeProjects");
 
-
   function openProjects() {
     projectsOverlay.classList.add("active");
     projectsOverlay.classList.remove("closing");
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (projectsBtn) {
     projectsBtn.addEventListener("click", openProjects);
   }
-  
+
   if (closeProjects) {
     closeProjects.addEventListener("click", closeProjectsModal);
   }
@@ -36,7 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close modal when clicking outside the content
   projectsOverlay.addEventListener("click", (e) => {
     // Close if clicking on the overlay background (not the modal content)
-    if (e.target === projectsOverlay || e.target.classList.contains("projects-book") ) {
+    if (
+      e.target === projectsOverlay ||
+      e.target.classList.contains("projects-book")
+    ) {
       closeProjectsModal();
     }
   });
@@ -146,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // Get typing effect in title
@@ -155,20 +157,20 @@ async function typewriteTitle(str) {
   while (true) {
     // Type out the string
     for (let i = 0; i < str.length; i++) {
-      document.title = str.substring(0, i + 1)+"_";
+      document.title = str.substring(0, i + 1) + "_";
       await sleep(120);
     }
-    
+
     // Pause at the end
     await sleep(1000);
-    
+
     // Delete the string character by character
     for (let i = str.length; i > 1; i--) {
       document.title = str.substring(0, i - 1);
       await sleep(50);
     }
     document.title = "_";
-    
+
     // Pause before restarting
     await sleep(500);
   }
