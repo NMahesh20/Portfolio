@@ -50,6 +50,17 @@ body {
   height: 22px;
   stroke-width: 1.5;
 }
+
+/* Language selector buttons */
+.lang-btn {
+  transition: all 0.2s ease;
+}
+
+#langBtnEn,
+#langBtnDe {
+  transition: all 0.3s ease;
+}
+
 footer {
   position: relative;
   text-align: center;
@@ -60,6 +71,7 @@ footer {
 
 .project-card {
   transition: all 0.3s ease;
+  will-change: transform, border-color;
 }
 
 .project-card:hover {
@@ -67,13 +79,19 @@ footer {
   border-color: var(--ink);
 }
 
+@media (hover: hover) {
+  .project-card {
+    cursor: pointer;
+  }
+}
+
 /* Projects Modal Styles */
 .projects-overlay {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
-  transition:
-    opacity 0.5s ease,
-    pointer-events 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .projects-overlay.active {
