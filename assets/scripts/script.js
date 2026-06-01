@@ -18,7 +18,7 @@ const contentStore = {
       linkedin: "https://linkedin.com/in/mahesh2000",
     },
     footer: {
-      cta: "Work Together ?",
+      cta: "Work Together?",
       email: "themahesh2077@gmail.com",
       credit: "Built by Mahesh × AI",
     },
