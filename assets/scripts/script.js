@@ -81,7 +81,7 @@ const contentStore = {
     footer: {
       cta: "Zusammenarbeiten?",
       email: "themahesh2077@gmail.com",
-      credit: "Erstellt von Mahesh × AI",
+      credit: "Erstellt von Mahesh × KI",
     },
     projects: {
       title: "projekte",
