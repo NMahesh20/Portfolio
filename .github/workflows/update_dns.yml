@@ -1,0 +1,20 @@
+# needed otherwise the domain will be removed from deSEC after 6 months of inactivity
+name: Update deSEC DNS Record
+
+on:
+  schedule:
+    # Runs at 00:00 on day 1 of every 5th month (January, June, November)
+    - cron: '0 0 1 */5 *'
+  workflow_dispatch:
+    
+
+jobs:
+  update-dns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send API Request to deSEC
+        run: |
+          curl -X PATCH https://desec.io/api/v1/domains/mahesh.dedyn.io/rrsets/_last_updated/TXT/ \
+              --header "Authorization: Token ${{ secrets.DESEC_API_TOKEN }}" \
+              --header "Content-Type: application/json" --data @- <<< 
+              "{\"ttl\": 3600, \"records\": [\"\\\"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\\\"\"]}"
