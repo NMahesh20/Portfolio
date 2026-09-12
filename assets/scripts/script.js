@@ -26,6 +26,25 @@ const contentStore = {
       title: "projects",
       items: [
         {
+          title: "FriendBoxd",
+          description:
+            "Get the movie picks from your friends' Letterboxd watchlists - taste-matched, genre-filtered recommendations with an optional AI layer.",
+          links: [
+            {
+              label: "Code",
+              url: "https://github.com/NMahesh20/FriendBoxd",
+            },
+            {
+              label: "DockerHub",
+              url: "https://hub.docker.com/r/oblivion2098/friendboxd",
+            },
+            {
+              label: "Link",
+              url: "https://friendboxd-ten.vercel.app/",
+            },
+          ],
+        },
+        {
           title: "Outreach",
           description:
             "The platform automates the process of reaching out to potential academic or job opportunities. By analyzing the user's interests, it scans the web for relevant contact emails and automatically sends personalized emails to the appropriate authorities.",
@@ -86,6 +105,24 @@ const contentStore = {
     projects: {
       title: "projekte",
       items: [
+        {
+          title: "FriendBoxd",
+          description: "Hole dir die Filmtipps aus den Letterboxd-Watchlists deiner Freunde - geschmacklich abgestimmte, nach Genres gefilterte Empfehlungen mit einer optionalen KI-Ebene.",
+          links: [
+            {
+              label: "Code",
+              url: "https://github.com/NMahesh20/FriendBoxd",
+            },
+            {
+              label: "DockerHub",
+              url: "https://hub.docker.com/r/oblivion2098/friendboxd",
+            },
+            {
+              label: "Link",
+              url: "https://friendboxd-ten.vercel.app/",
+            },
+          ],
+        },
         {
           title: "Outreach",
           description:
