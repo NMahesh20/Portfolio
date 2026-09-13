@@ -40,7 +40,7 @@ const contentStore = {
             },
             {
               label: "Link",
-              url: "https://friendboxd-ten.vercel.app/",
+              url: "https://friendboxd.onrender.com/",
             },
           ],
         },
@@ -119,7 +119,7 @@ const contentStore = {
             },
             {
               label: "Link",
-              url: "https://friendboxd-ten.vercel.app/",
+              url: "https://friendboxd.onrender.com/",
             },
           ],
         },
